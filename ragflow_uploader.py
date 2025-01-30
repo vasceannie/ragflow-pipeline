@@ -34,7 +34,20 @@ logging.basicConfig(
 
 @dataclass
 class ProcessingMetrics:
-    """Real-time processing metrics"""
+    """
+A class to track and convert real-time processing metrics into a dictionary format.
+
+Attributes:
+    cpu_percent (float): The percentage of CPU usage.
+    memory_percent (float): The percentage of memory usage.
+    disk_io_read (int): The number of bytes read from disk.
+    disk_io_write (int): The number of bytes written to disk.
+    network_sent (int): The number of bytes sent over the network.
+    network_recv (int): The number of bytes received over the network.
+
+Methods:
+    to_dict: Converts the metrics into a dictionary with human-readable values.
+"""
     cpu_percent: float = 0.0
     memory_percent: float = 0.0
     disk_io_read: int = 0
